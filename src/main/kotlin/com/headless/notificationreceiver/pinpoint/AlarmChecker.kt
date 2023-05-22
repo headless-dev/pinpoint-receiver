@@ -1,4 +1,6 @@
 package com.headless.notificationreceiver.pinpoint
 
-class AlarmChecker {
+abstract class AlarmChecker<T>(protected open val detectedValue: T) : Checker<T>() {
+    override val getDetectedValue: List<T>
+        get() = listOf(detectedValue)
 }

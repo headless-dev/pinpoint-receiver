@@ -1,4 +1,6 @@
 package com.headless.notificationreceiver.pinpoint
 
-class UserGroup {
-}
+data class UserGroup (
+    val userGroupId: String,
+    val userGroupMembers: List<UserMember>
+)

@@ -3,7 +3,8 @@ package com.headless.notificationreceiver.pinpoint
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonTypeName
 
-@JsonTypeName("LongValueAgentChecker")
-class LongValueAgentChecker
+@JsonTypeName("BooleanValueAgentChecker")
+data class BooleanValueAgentChecker
 @JsonCreator
-constructor(detectedValue: List<DetectedAgent<Long>>) : AgentChecker<DetectedAgent<Long>>(detectedValue)
+constructor(override val detectedValue: List<DetectedAgent<Boolean>>)
+    : AgentChecker<DetectedAgent<Boolean>>(detectedValue)

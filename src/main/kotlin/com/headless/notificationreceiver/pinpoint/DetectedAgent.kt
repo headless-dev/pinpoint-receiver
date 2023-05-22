@@ -1,4 +1,3 @@
 package com.headless.notificationreceiver.pinpoint
 
-class DetectedAgent {
-}
+data class DetectedAgent<T>(val agentId: String, val agentValue: T)

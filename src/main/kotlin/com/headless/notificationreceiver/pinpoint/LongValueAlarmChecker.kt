@@ -3,7 +3,7 @@ package com.headless.notificationreceiver.pinpoint
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonTypeName
 
-@JsonTypeName("LongValueAgentChecker")
-class LongValueAgentChecker
+@JsonTypeName("LongValueAlarmChecker")
+data class LongValueAlarmChecker
 @JsonCreator
-constructor(detectedValue: List<DetectedAgent<Long>>) : AgentChecker<DetectedAgent<Long>>(detectedValue)
+constructor(override val name: String, override val detectedValue: Long) : AlarmChecker<Long>(detectedValue)
