@@ -21,12 +21,12 @@ class SlackSender(private val slackClient: MethodsClient) {
 
         val textField = Field()
         textField.title = pinpointBody.applicationId
-        textField.value = getTitle(pinpointBody)
+        textField.value = getValue(pinpointBody)
         attachment.fields = arrayListOf(infoField, textField)
         slackClient.chatPostMessage { it.channel(System.getenv("SLACK_CHANNEL_ID")).attachments(listOf(attachment)) }
     }
 
-    private fun getTitle(pinpointBody: PinpointBody): String {
+    private fun getValue(pinpointBody: PinpointBody): String {
         var env = System.getenv("SLACK_ATTACHMENT_VALUE")
         for (field in pinpointBody::class.java.fields) {
             field.canAccess(true)
