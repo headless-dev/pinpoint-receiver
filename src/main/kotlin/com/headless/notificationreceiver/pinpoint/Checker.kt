@@ -13,6 +13,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
     JsonSubTypes.Type(value = DataSourceAlarmListValueAgentChecker::class, name = "DataSourceAlarmListValueAgentChecker"),
 ])
 abstract class Checker<T> {
-    open val name: String? = null
+    open val name: String = ""
     abstract val getDetectedValue: List<T>
 }
